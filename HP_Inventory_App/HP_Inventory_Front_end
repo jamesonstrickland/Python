@@ -8,7 +8,7 @@ def check_in():
 
     # Connect to the MySQL database
     connection = mysql.connector.connect(
-        host="USABQM0TEST.corp.jabil.org",
+        host="",
         user="sa",
         password="sapassword1",
         database=""
