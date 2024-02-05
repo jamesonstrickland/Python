@@ -1,0 +1,74 @@
+import tkinter as tk
+from tkinter import ttk
+import mysql.connector
+
+def check_in():
+    model = model_entry.get()
+    type_selected = type_var.get()
+
+    # Connect to the MySQL database
+    connection = mysql.connector.connect(
+        host="USABQM0TEST.corp.jabil.org",
+        user="sa",
+        password="sapassword1",
+        database=""
+    )
+
+    # Create a cursor object to interact with the database
+    cursor = connection.cursor()
+
+    # Define the SQL query based on the selected type
+    if type_selected == "Toner":
+        query = "INSERT INTO toner (model) VALUES (%s)"
+    elif type_selected == "Drum":
+        query = "INSERT INTO drum (model) VALUES (%s)"
+    elif type_selected == "CollectionUnit":
+        query = "INSERT INTO collectionunit (model) VALUES (%s)"
+    else:
+        # Handle an unknown type (You may want to add proper error handling here)
+        return
+
+    # Execute the query with the provided values
+    cursor.execute(query, (model,))
+
+    # Commit the changes to the database
+    connection.commit()
+
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
+
+    # Clear the entry fields after check-in
+    model_entry.delete(0, tk.END)
+    type_var.set("")
+    model_entry.config(state=tk.DISABLED)
+
+def enable_model_entry(event):
+    # Enable the model entry field when a type is selected
+    model_entry.config(state=tk.NORMAL)
+
+# Create the main window
+root = tk.Tk()
+root.title("Printer Check-In")
+
+# Create and place the form elements
+type_label = tk.Label(root, text="Type:")
+type_label.grid(row=0, column=0, padx=10, pady=10)
+
+types = ["Toner", "Drum", "CollectionUnit"]
+type_var = tk.StringVar()
+type_dropdown = ttk.Combobox(root, textvariable=type_var, values=types)
+type_dropdown.grid(row=0, column=1, padx=10, pady=10)
+type_dropdown.bind("<<ComboboxSelected>>", enable_model_entry)
+
+model_label = tk.Label(root, text="Model:")
+model_label.grid(row=1, column=0, padx=10, pady=10)
+
+model_entry = tk.Entry(root, state=tk.DISABLED)
+model_entry.grid(row=1, column=1, padx=10, pady=10)
+
+check_in_button = tk.Button(root, text="Check-In", command=check_in)
+check_in_button.grid(row=2, column=0, columnspan=2, pady=20)
+
+# Start the Tkinter event loop
+root.mainloop()
