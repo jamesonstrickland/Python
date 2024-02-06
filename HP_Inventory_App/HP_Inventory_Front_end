@@ -25,7 +25,7 @@ def check_in():
     elif type_selected == "CollectionUnit":
         query = "INSERT INTO collectionunit (model) VALUES (%s)"
     else:
-        # Handle an unknown type (You may want to add proper error handling here)
+        # Handle an unknown type (Add proper error handling here)
         return
 
     # Execute the query with the provided values
