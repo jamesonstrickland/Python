@@ -26,8 +26,7 @@ This effectively creates a template that can be used with any name in the name v
 
 
 
-#  Quick conversion task
-**
+##  Quick conversion task
 
 First, ask the user for their name. Then, print out the greeting "Hello, NAME"
 Remember the uppercase H, the comma, and the space between words!
@@ -41,7 +40,7 @@ months = age * 12
 print(months)
 
 #  Sets, Tuples, Lists, Dictionaries
-**
+
 
 Lists: [] Lists are mutable and easily changed with .append and .remove methods
 list1 = [value1, value2, value3]
@@ -84,7 +83,7 @@ dictionary1[key4] = value4
 print(dictionary1[1])
 
 #  Length and sum
-**
+
 
 Sum
 you can add together the integer values of a list with the sum() function.
@@ -104,10 +103,7 @@ average = total / length
 print(average)
 5
 
-# Lotto Exercise
-
-Monday, February 26, 2024
-7:35 AM
+## Lotto Exercise
 
 lottery_numbers = {13, 21, 22, 5, 8}
  
@@ -143,8 +139,8 @@ numbers = players[0]["numbers"].intersection(lottery_numbers)
 print(f"Player {name} got {len(numbers)} numbers right.")
 
 
-# **Join Lists
-**
+# Join Lists
+
 
 you can join lists to make them more easy to read, by using the Join method
 
@@ -165,13 +161,13 @@ Result:
 My family is Tiffanie, Teagan, Adrian.
 
 
-# **Control Flow
-**
+# Control Flow
+
 
 Control Flow is a blanket term for different structures and statements and basic decisions made by a program based on inputs from the user or other similar conditions, that ultimately result in a desired output or function. Control flow refers to the sequence in which the statements of a program are executed, including various structures and statements that control the flow of execution based on conditions, loops, and function calls. These structures and statements allow the program to make decisions, iterate over data, and execute code blocks selectively, ultimately leading to the desired output or behavior. Control flow is essential for programming as it determines the logic and order of operations within a program, enabling it to perform different tasks based on specific conditions or inputs.
 
-# **If/Elif/Else Statements
-**
+## If/Elif/Else Statements
+
 
 If statements allow your program to make decisions based on a Boolean value. the 'if' command executes an evaluation of a specific condition, and if true, it takes the true path of the tree, and if not, it takes the false path of the tree. 
 
@@ -246,8 +242,8 @@ Welcome, Family.
  
 There can be as many elif staetments as necessary, and remember that they are evaluated in order! The first one that runs, means that the others don't run. 
 
-# **While Loops
-**
+## While Loops
+
 Loops are used to repeat things multiple times. A while loop will iterate through boolean conditions and run while the desired state is true. It is especially useful when repeating a process an undefined number of times- i.e. until a user tells the code to stop. 
 
 Syntax: Similar to if statements, in that the loop must be initialized with a colon (:), and the body must be indented immediately beneath the while statement. 
@@ -347,8 +343,8 @@ while i < 20:
 	print(f'Repeated {i} times.')
 	i += 1
 
-# **For Loops
-**
+## For Loops
+
 For loops, like While loops, are used to iterate through certain conditions and output depending on the evaluation of those conditions. Unlike While loops, however, For loops are used to repeat something a defined number of times. Python's approach to For loops is unique to other languages, which may use For Each. 
 
 Syntax: The same as a While loop, but with For instead. 
@@ -455,8 +451,8 @@ Result:
 
 This will iterate n as every numerical value in the range, and run the loop for each. If the range was (2,1000), the loop would execute 998 times. The x value is assigned the n value each time, and then divides n by x. If the remainder is 0,  then the number is not prime. If the remainder is anything other than 0, the else statement will execute, telling us that the number is prime. As an optimization, we don't really need to check the second for loop from range (2,n), you really only need to check from 2 through the square root of n. 
 
-# **Destructuring Syntax
-**
+## Destructuring Syntax
+
 
 There are many different ways to write Python, but there are some that are easier to read, some that are more efficient at runtime, and some that are just easier to write. Destructuring is a way to make things easier to read, and improves writing efficiency. 
 
@@ -493,8 +489,8 @@ Anne is 22 years old.
 
 There are many different ways to write this same output, but the destructuring method here is the best way.
 
-# **Break & Continue
-**
+## Break & Continue
+
 
 Break and continue are syntax keywords that can help handle certain exceptions.
 
@@ -544,8 +540,8 @@ Shipping to customer.
 This car is ok.
 Shipping to customer.
 
-# **Else in Loops
-**
+## Else in Loops
+
 Else can be used as a keyword trigger when using loops. This else statement will be executed only if the loop encounters no breaks/continues; in other words, if the loop runs completely without exceptions.
 
 Syntax: The else keyword is on the same indentation level as the for/while loop statement. 
@@ -604,7 +600,8 @@ This car is ok.
 Shipping to customer.
 All cars built successfully. No faulty cars.
 
-# Slicing
+## Slicing
+
 Slicing is the process of getting part of a list, dictionary, tuple, or other iterable. The first number is the starting number in the list, and the last is the last number in the list. 
 
 Example (Basic):
@@ -637,7 +634,7 @@ Result:
 
 this counts backwards from the end o f the list, and output begins with that value, and counts forward from there. 
 
-# Comprhensions
+## Comprhensions
 Comprehensions are a Python feature that allows the creation of new lists using elements from other lists. 
 
 Example:
@@ -662,4 +659,4 @@ Result: [0, 2, 4, 6, 8]
 
 This is the same as the For loop, but simpler in the coding. 
 
-List comprehension can also be used for data normalization,  
+List comprehension can also be used for data normalization  
