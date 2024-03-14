@@ -603,3 +603,63 @@ Shipping to customer.
 This car is ok.
 Shipping to customer.
 All cars built successfully. No faulty cars.
+
+# Slicing
+Slicing is the process of getting part of a list, dictionary, tuple, or other iterable. The first number is the starting number in the list, and the last is the last number in the list. 
+
+Example (Basic):
+list = ["Name1", "Name2", "Name3", "Name4", "Name5"]
+
+print(list1[1:3])
+Result:
+["Name2", "Name3"]
+
+Slicing can be exclusionary, depending on the configuration of the colon and place numbers; for example:
+list = ["Name1", "Name2", "Name3", "Name4", "Name5"]
+
+print(list1[1:])
+Result:
+["Name2", "Name3", "Name4", "Name5"]
+
+OR 
+
+print(list1[:4])
+Result:
+["Name1", "Name2", "Name3", "Name4"]
+
+
+You can also slice from the end of the list using negative numbers. 
+Example:
+
+print(list1[-3:])
+Result:
+["Name3", "Name4", "Name5"]
+
+this counts backwards from the end o f the list, and output begins with that value, and counts forward from there. 
+
+# Comprhensions
+Comprehensions are a Python feature that allows the creation of new lists using elements from other lists. 
+
+Example:
+numbers = [0, 1, 2, 3, 4]
+doubled_numbers = []
+
+for number in numbers:
+	doubled_numbers.append(number * 2)
+	
+print(doubled_numbers)
+
+Result: [0, 2, 4, 6, 8]
+
+But this is just a For loop. Using list comprehension, we can output the same result, but with much more succinct and efficient code.
+
+Use list comprehension instead:
+ 
+numbers = [0, 1, 2, 3, 4]
+doubled_numbers = [number * 2 for number in numbers]
+
+Result: [0, 2, 4, 6, 8]
+
+This is the same as the For loop, but simpler in the coding. 
+
+List comprehension can also be used for data normalization,  
