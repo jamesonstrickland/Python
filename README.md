@@ -3,7 +3,63 @@ Building with Python
 
 I will dump my current Python how-to notes here and update them when I can. 
 
-#  F Strings
+# Data Types
+Data types classify the kind of values that variables can hold, data structures provide a way of organizing and storing data in a specific format or layout to facilitate efficient access and manipulation. Python provides a rich set of built-in data types and data structures that can be used to represent and organize data in various ways.
+
+**Data Types:**
+
+**Integer (int):** Represents whole numbers without fractional parts.
+```
+x = 10
+y = -5
+```
+
+**Float (float):** Represents decimal numbers.
+```
+x = 3.14
+y = -0.5
+```
+
+**String (str):** Represents sequences of characters enclosed in quotes.
+```
+name = "Alice"
+message = 'Hello, world!'
+```
+
+**Boolean (bool)**: Represents True or False values.
+```
+is_active = True
+is_valid = False
+```
+
+**List (list):** Represents ordered collections of items.
+```
+numbers = [1, 2, 3, 4, 5]
+names = ['Alice', 'Bob', 'Charlie']
+```
+
+**Tuple (tuple):** Represents ordered collections of items, similar to lists but immutable.
+```
+coordinates = (10, 20)
+colors = ('red', 'green', 'blue')
+```
+
+**Dictionary (dict):** Represents key-value pairs.
+```
+person = {'name': 'Alice', 'age': 30, 'city': 'New York'}
+```
+
+**Set (set):** Represents unordered collections of unique items.
+```
+unique_numbers = {1, 2, 3, 4, 5}
+```
+
+**NoneType (None):** Represents the absence of a value.
+```
+no_value = None
+```
+
+##  F Strings
 **
 
 F strings are only available in python 3.6 or higher. 
@@ -25,6 +81,87 @@ print(format_greeting)
 This effectively creates a template that can be used with any name in the name variable. 
 
 
+# Data Structures
+
+Data structures represent the way that data is organized and stored to support efficient operations on collections of data elements or data types. Data structures are differentiated from data types because structures are higher-level constructs that use data types to organize and manage data. Without data types, there could be no data structures. 
+
+**Data structures:**
+
+**Stack:** Represents a last-in, first-out (LIFO) collection.
+```
+stack = []
+stack.append(1)
+stack.append(2)
+stack.pop()  # Removes and returns the last item (2)
+```
+
+**Queue:** Represents a first-in, first-out (FIFO) collection.
+```
+from collections import deque
+queue = deque()
+queue.append(1)
+queue.append(2)
+queue.popleft()  # Removes and returns the first item (1)
+```
+
+**Heap (Priority Queue):** Represents a binary heap used for priority queue operations.
+```
+import heapq
+heap = []
+heapq.heappush(heap, 5)
+heapq.heappush(heap, 3)
+heapq.heappop(heap)  # Removes and returns the smallest item (3)
+```
+
+**Tree:** Represents hierarchical data structures with nodes connected by edges.
+```
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+root = Node(10)
+root.left = Node(5)
+root.right = Node(15)
+```
+
+**Graph:** Represents networks of nodes connected by edges.
+```
+graph = {
+    'A': ['B', 'C'],
+    'B': ['C', 'D'],
+    'C': ['D'],
+    'D': ['C'],
+    'E': ['F'],
+    'F': ['C']
+}
+```
+
+**Linked List:** Represents a linear data structure where elements are linked sequentially.
+```
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+```
+
+**Hash Table (Dictionary):** Represents a data structure that maps keys to values for efficient lookup.
+```
+hashtable = {}
+hashtable['Alice'] = 30
+hashtable['Bob'] = 25
+```
+
+**Array:** Represents a collection of items stored at contiguous memory locations.
+```
+import array
+numbers = array.array('i', [1, 2, 3, 4, 5])  # 'i' indicates integer type
+```
 
 ##  Quick conversion task
 
@@ -45,14 +182,14 @@ print(months)
 #  Sets, Tuples, Lists, Dictionaries
 
 
-Lists: [] Lists are mutable and easily changed with .append and .remove methods
+**Lists: []** Lists are mutable and easily changed with .append and .remove methods
 ```
 list1 = [value1, value2, value3]
 list1.add(value4)
 print(List1)
 ```
 
-Sets: {} Sets do not keep order, printing results in random order. You can modify a set using the .add and .remove methods. Sets are useful for comparisons using the .difference() method. Sets will not contain duplicates
+**Sets: {}** Sets do not keep order, printing results in random order. You can modify a set using the .add and .remove methods. Sets are useful for comparisons using the .difference() method. Sets will not contain duplicates
 Example 1- difference method:
 ```
 set1 = {value1, value2, value3}
@@ -84,7 +221,7 @@ all_sets = set1.union(set2)
 print(all_sets)
 ```
 
-Tuples: () Tuples are immutable, as opposed to lists. If you want to add to a tuple, you must create a new tuple with the old tuple inside:
+**Tuples: () **Tuples are immutable, as opposed to lists. If you want to add to a tuple, you must create a new tuple with the old tuple inside:
 ```
 tuple1 = (value1, value2, value3)
 newTuple = (tuple1, value4)
@@ -97,10 +234,10 @@ dictionary1[key4] = value4
 print(dictionary1[1])
 ```
 
-#  Length and sum
+# Length and sum
 
 
-Sum
+**Sum**
 you can add together the integer values of a list with the sum() function.
 ```
 List1 = [2,4,6,8]
@@ -109,6 +246,7 @@ print(total)
 20
 ```
 
+**Len**
 You can also get the length of a list with the len() function. 
 ```
 list1 = [2,4,6,8]
@@ -158,7 +296,6 @@ print(f"Player {name} got {len(numbers)} numbers right.")
 ```
 
 # Join Lists
-
 
 you can join lists to make them more easy to read, by using the Join method
 
@@ -834,3 +971,492 @@ def calculate_mpg(car):
 for car in cars:
 calculate_mpg(car)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Glossary of Terms
+## Variable
+
+A named storage location in computer memory that holds an assigned value.
+
+ ## Data Type
+
+Classification of data that determines the type of operations that can be performed on it.
+
+## String
+
+A sequence of characters, typically used to represent text.
+
+## Integer
+
+A whole number, no decimal or fractional parts.
+
+## Float
+
+A numerical data type that represents 'floating-point' numbers with decimal parts.
+
+## Boolean
+
+a data type that represents two possible values: True or False. 
+
+## List
+
+Ordered collection of items that can be of different data types; mutable. 
+
+## Tuple
+
+Ordered collection of items, similar to a list, but immutable.
+
+## Dictionary
+
+A collection of key-value pairs, each key associated to a specific value. 
+
+## Set
+
+Unordered collection of unique elements. Eliminates duplicate values.
+
+## Enumeration (Enum)
+
+A data type that consists of a set of named constants. Each constant represents a unique value within the enumeration.
+
+## Array
+
+A data structure that consists of a collection of items stored at contiguous memory locations. 
+
+## Slice
+
+A way of extracting a portion of a sequence or collection (list, string, etc) by specifying start, stop, and optional step indices. 
+
+## Index(ing)
+
+A numerical value representing a position within a data structure's sequence. Typically begins from 0 as the first element. Indexing is accessing individual elements within the data structure by referencing the specific positional values. 
+
+## Call
+
+the act of invoking a function or method to execute its code with specified arguments, which are usually in parenthesis.
+
+## Iteration
+
+Repeatedly executing a block of code over a sequence of items, such as in a loop.
+
+## Control Flow
+
+The order in which statements are executed in a program, determined by conditionals, loops, function calls, etc. 
+
+## Loop
+
+A control flow statement that repeatedly executes a block of code until a specified condition is met. 
+
+## Conditional Statement
+
+A control flow statement that allows the execution of different blocks of code based on the evaluation of a specified condition. 
+
+## If Statement
+
+A conditional statement that executes if a specified condition is True.  
+
+## Else Statement
+
+Part of an if statement that executes if all other parts of an if statement evaluate to False. 
+
+## Elif Statement
+
+A part of an if statement that allows testing multiple conditions sequentially after the initial if condition. Typically followed by a final Else statement. 
+
+## Comparison Operator
+
+Operators used to compare two values or expressions, such as == (equal), != (not equal), < (less than), > (greater than), <= (less than or equal to), >= (greater than or equal to). 
+
+## Logical Operator
+
+Operators used to combine or maniplulate boolean values, such as and, or, not, can create complex conditional expressions. 
+
+## Function
+
+A block of reusable code that performs a specific task.
+
+## Parameter
+
+A variable used in a function definition to represent input data. 
+
+## Argument
+
+A value passed through a parameter when the parameter is called by a function. 
+
+## Return Value
+
+The result or output of a function
+
+## Built-in Function
+
+A predefined function that comes built into Python. Always available for use
+
+## Module
+
+A file containing Python code, usually a collection of functions, classes, and variables. 
+
+## Package
+
+A collection of modules organized in a directory structure. 
+
+## Import Statement
+
+A statement used to bring modules or objects from specific modules into the current namespace. 
+
+## Namespace
+
+A context in which names (variables, functions, etc) are unique and can be referenced without ambiguity. 
+
+## Dot Notation
+
+Syntax used to access attributes and methods of objects. Involves using a dot ('.') 
+
+## Exception
+
+An event that occurs during the execution of a program that disrupts the normal flow of instructions and can be handled by the program. 
+
+## Try-Except Block
+
+A block of code used to handle exceptions that may occur during execution. 
+
+## Raise Statement
+
+Statement used to explicitly raise an exception. 
+
+## Library
+
+A collection of predefined reusable code and resources that provide specific functionality. Ex Numpy, tkinter
+
+## File I/O
+
+Input/Output operations performed on files, typically reading or writing to files. 
+
+## Open Function
+
+A function used to open files for reading or writing. 
+
+## Read Function
+
+A function used to read data from an opened file. 
+
+## Write Function
+
+A function used to write data to an opened file. 
+
+## Append Function
+
+A function used to add data to the end of an opened file. 
+
+## Close Method
+
+A function used to close an opened file and release associated system resources. 
+
+## Context Manager
+
+An object that manages resources within a block of code using the "with" statement. 
+
+## Class
+
+a Blueprint for creating objects that defines attributes and methods.
+
+## Object
+
+An data structure that is an instance of a class that encapsulates both data (attributes and properties) and methods (functions or procedures) that operate on that data (behavior). 
+
+## Method
+
+A function defined within a class that operates on its object's data (attributes); can perform actions or computations using the object's attributes or modify and object's state. 
+
+## Attribute
+
+A piece of data stored within an object, representing a state or characteristic. Attributes are accessed and manipulated using dot notation ('object.attribute') and can be variables, constants, or references to other objects. 
+
+## State
+
+Refers to the current condition or configuration of an object or program at a particular point in time. Can encompass the values of variables, status of objects, etc. 
+
+## Stateful
+
+A program or system that retains information about previous interactions or events.  
+
+## Constant
+
+A variable whose value remains unchanged throughout the program's execution. Once assigned, it cannot be modified, reassigned or changed. Typically used for fixed mathematical values such as pi, configuration settings, etc. 
+
+## Inheritance
+
+Mechanism where a class inherits attributes and methods from another class. 
+
+## Decorator
+
+Special type of function that modifies behavior of other functions or methods. 
+
+## Lambda Function
+
+A small anonymous function defined with 'lambda' keyword, allowing creation of a function without a formal name. Useful for short, one-time operations in which a full function definition is unnecessary. 
+
+## Persistence
+
+The ability of a program to save and retrieve data between different executions or sessions. Involves storing data in a persistent storage medium (file, db, etc) which remains accessible after the program terminates. 
+
+## Transience
+
+Opposite of Persistence. Information or data that is temporary and only relevant within the current session or program execution. Once the program terminates, transient state data is usually lost unless explicitly persisted.
+
+## Algorithm
+
+A step-by-step procedure for solving a problem or accomplishing a task. 
+
+## Data Structure
+
+An efficient way of organizing and storing data to perform specific operations. 
+
+## Stack
+
+A memory paradigm that follows the Last-in, First-out (LIFO) principle. 
+
+## Heap
+
+A specialized tree-based memory paradigm used to maintain a priority queue. 
+
+## Queue
+
+A data structure for storing and managing data that follows First-In, First-Out (FIFO) principle. 
+
+## Linked List
+
+A linear data structure where elements are stored in nodes with pointers to the next node. 
+
+## Tree
+
+A hierarchical data structure consisting of nodes connected by edges. 
+
+## Edges
+
+Represent connections or relationships between nodes in a graph or network data structure. They define how nodes are linked or related to each other. 
+
+## Graph
+
+A collection of nodes (vertices) connected by edges representing relationships. 
+
+## Hash
+
+A function that converts input data into a fixed-size value. 
+
+## Hash Table
+
+A data structure that uses a hash function to map keys to values for efficient lookup and validation. 
+
+## Binary Search
+
+A search algorithm that finds the position of a target value within a sorted array by repeatedly dividing the search interval in half. 
+
+## Sorting Algorithm
+
+An algorithm that arranges elements in a specific order, such as ascending or descending. 
+
+## Recursion
+
+A technique or mechanism where a function calls itself to solve smaller instances of the same problem. 
+
+## Complexity Analysis
+
+Study of the performance characteristics of algorithms in terms of time and space.
+
+## Big O Notation
+
+Mathematical notation used to describe the upper bound or worst-case time complexity of an algorithm. 
+
+## Binary
+
+Number system with a base of 2, using only digits 0 and 1. 
+
+## Hexadecimal
+
+Number system with a base of 16, using digits 0-9 and letters A-F. 
+
+## Octal
+
+Number system with a base of 8, using digits 0-7.
+
+## Boolean Logic
+
+Branch of algebra that deals with logical operations on binary variables. 
+
+## Truth Table
+
+A table used to represent outcomes of all possible combinations of inputs in a logical expression. 
+
+## Buffer
+
+A temporary storage area designated to hold data while it is being transferred between devices or processes. 
+
+## Buffer Overflow
+
+Occurs when a program tries to store more data in a buffer than the buffer is designed to handle, potentially leading to security vulnerabilities. 
+
+## Runtime
+
+The period during which a program is executing or running. 
+
+## Node
+
+An individual element in a data structure, such as a linked list or a tree. Nodes can contain data and references or pointers to other nodes.
+
+## Branching
+
+Controlling the flow of program execution based on conditions. 
+
+## Looping
+
+Repeating a block of code multiple times until a condition is met. 
+
+## Bitwise Operation
+
+Manipulation of individual bits of binary numbers. 
+
+## Pointer
+
+A variable that stores the memory address of another variable. 
+
+## Reference
+
+A value that refers to another object's memory address. 
+
+## Memory Allocation
+
+Reservation of memory space for data storage during program execution. 
+
+## Garbage Collection
+
+Automatic process of reclaiming memory occupied by unreferenced objects. 
+
+## Segmentation Fault
+
+Error that occurs when a program tries to access restricted memory regions. 
+
+## Compilation
+
+A program that translates source code written in a high-level programming language into machine code or bytecode.
+
+## Interpreter
+
+A program that directly executes code written in a high-level programming language without compiling it into machine code.
+
+## Bytecode
+
+Intermediate code generated by compilers and typically executed by a VM.
+
+## Machine Code
+
+Low-level instructions directly executable by a computer's CPU. 
+
+## Syntax
+
+The set of rules governing the structure and format of statements in a language.
+
+## Semantics
+
+The meaning or interpretation of code in the context of a language. 
+
+## Compilation Error
+
+An error that occurs during the compilation process due to syntax or semantic issues. 
+
+## Runtime Error
+
+An error that occurs while a program is running due to unexpected conditions. A disruption of the normal (expected) execution conditions. 
+
+## Logic Error
+
+An error in the program's logic that causes it to behave incorrectly, often without a crash. 
+
+## Deadlock
+
+A situation where two or more processes are unable to proceed because each is waiting for the other to release a resource. 
+
+## Debugging
+
+The process of identifying and fixing errors or bugs in a program. 
+
+## Breakpoint
+
+A designated point in a program's execution that causes an intentional pause for inspection during debugging. 
+
+## Profiling
+
+Analyzing the performance of a program to identify bottlenecks or inefficiencies. 
+
+## Optimization
+
+Improving the performance or efficiency of a program by making it faster or reducing resource consumption.
+
+## Abstraction
+
+Simplifying complex systems by focusing on high-level concepts and hiding implementation details. 
+
+## Modularity
+
+Organizing code into separate, interchangeable components to promote reusability and maintainability. 
+
+## Unit Testing
+
+Software testing approach where individual units or components of a program are tested in isolation to ensure they work correctly and meet specified standards or requirements. 
+
+## Encapsulation
+
+Bundling data and methods that operate on the data into a single unit, hiding implementation details. 
+
+## Polymorphism
+
+The ability of objects to take on different forms or respond differently to the same message or method call.
+
+## Repository
+
+Typically refers to a version control system, used to store and manage source code, project files, and related resources. 
+
+## Extensions
+
+Additional modules or packages that enhance the functionality of the core language. These can provide new features, libraries, or tools that can extend Python's capabilities for specific tasks or domains. 
+
+## GUID
+
+Globally Unique Identifier- a unique ID that is generated algorithmically to ensure uniqueness across distributed systems or relational databases. 
+
+## GUI
+
+Graphical User Interface- the visual interface that enables user interaction with programs or applications using elements such as windows, buttons, menus, forms, etc. 
+
+## Artifact
+
+any output or result produced during the software development process. This can include compiled files, documentation, libraries, executables, or any other byproduct of the dev tools. 
+
+## Async (Asynchronous) 
+
+Asynchronous programming allows tasks to run concurrently and independently, enabling non-blocking execution and efficient resource utilization. 
+
+## Thread
+
+A small unit of execution within a process, capable of running concurrently with other threads. Threads share the same memory space and resources within a process. 
+
+## Hyperthreading
+
+A technology that allows a single physical CPU core to appear as multiple logical cores, improving parallel processing and multitasking performance. 
+
+## Multithreading
+
+A programming technique where multiple threads within a single process execute concurrently, improving performance and responsiveness in handling tasks. 
+
+## Multiprocessing
+
+Involves using multiple processors or CPU cores to execute tasks simultaneously, enhancing overall system performance and efficiency by distributing workload across multiple processing units. 
