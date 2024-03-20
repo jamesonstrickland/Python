@@ -761,3 +761,76 @@ winnings = 100 ** len(numbers_matched)
 print(f"{name} won {winnings}.")
 ```
 
+## Functions
+Functions are blocks of reusable code that serve a specific function. Since they are reusable, they can be called by name and made to execute or operate again and again. 
+
+Syntax: Always start with the "def" keyword. "Def" is short for define, and it lets Python know that you are defining a new function. Folllowing the "def" keyword, the name of the function followed by parenthesis. Just like in loops, the function name and parenthesis is followed by a colon. Following that comes the body of the function, where the function is fully defined. 
+
+Structure Example:
+```
+def function1():
+	Body
+```
+	
+A more functional example:
+```
+def greet():
+	name = input("Please enter your name: ")
+	print(f"Hello, {name}!")
+	
+greet()
+```
+
+As you can see in the example, the function is defined and invoked by entering the function name following the definition. Without entering the name of the function, the program only understands that a function was defined, and will not run the function. 
+
+Best practice dictates that shorter and more specific functions are better, there is less overhead and functions should be used for a single purpose. There is no limit to how much you can put into the body of a function, but the longer the function is, the more jumping around there will be in the program runtime. 
+
+Also note that variables created inside of a function are not global variables, they are only defined in that particular function, and cannot be called outside it. 
+
+### Arguments and Parameters
+
+Arguments and parameters are used inside functions to make them more generic and more broadly usable with various pieces of data.
+
+**Argument** = value passed into the function when a function call is made
+
+**Parameter** = variable that accepts a value inside of a function, defined in the function, receives the argument, and executes based on the value of the argument. 
+
+Example:
+```
+cars = [
+	{"make": "Ford", "model": "Focus", "mileage": 23000, "fuel_consumed": 460 },
+	{"make": "Chevy", "model": "Malibu", "mileage": 56000, "fuel_consumed": 900},
+	{"make": "Dodge", "model": "Charger", "mileage": 17000, "fuel_consumed": 330},
+	{"make": "VW", "model": "Passat", "mileage": 20000, "fuel_consumed": 425}
+]
+
+def calculate_mpg(car):
+	mpg = car["mileage"]/ car["fuel_consumed"]
+	name = f"{car['make']} {car['model']}"
+	print(f"{name} does {mpg} miles per gallon.")
+	
+for car in cars:
+	calculate_mpg(car)'
+```	
+
+### Return
+
+The return keyword is used to return values inside of a function. It can be used as the value of the function variable when that function is called in other functions. 
+
+Example:
+```
+cars = [
+	{"make": "Ford", "model": "Focus", "mileage": 23000, "fuel_consumed": 460 },
+	{"make": "Chevy", "model": "Malibu", "mileage": 56000, "fuel_consumed": 900},
+	{"make": "Dodge", "model": "Charger", "mileage": 17000, "fuel_consumed": 330},
+	{"make": "VW", "model": "Passat", "mileage": 20000, "fuel_consumed": 425}
+]
+
+def calculate_mpg(car):
+	mpg = car["mileage"]/ car["fuel_consumed"]
+	name = f"{car['make']} {car['model']}"
+	print(f"{name} does {mpg} miles per gallon.")
+	
+for car in cars:
+calculate_mpg(car)
+```
