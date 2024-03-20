@@ -32,6 +32,9 @@ is_active = True
 is_valid = False
 ```
 
+**NOTE**
+Lists, tuples, sets, and dictionaries are data types because they represent specific classifications or categories of data that variables can hold. Each of these data types has its own characteristics and behaviors in terms of how data is organized and accessed. Lists, tuples, sets, and dictionaries are also considered data structures because they are ways of organizing and storing data in memory. They provide specific methods and functionalities for working with collections of data elements, such as adding, removing, accessing, and iterating over elements.
+
 **List (list):** Represents ordered collections of items.
 ```
 numbers = [1, 2, 3, 4, 5]
