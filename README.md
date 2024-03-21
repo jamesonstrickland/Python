@@ -205,7 +205,7 @@ months = age * 12
 print(months)
 ```
 
-#  Sets, Tuples, Lists, Dictionaries
+#  Sets, Lists, Tuples, and Dictionaries
 
 
 **Lists: []** Lists are mutable and easily changed with .append and .remove methods
@@ -247,13 +247,13 @@ all_sets = set1.union(set2)
 print(all_sets)
 ```
 
-**Tuples: () **Tuples are immutable, as opposed to lists. If you want to add to a tuple, you must create a new tuple with the old tuple inside:
+**Tuples: ()** Tuples are immutable, as opposed to lists. If you want to add to a tuple, you must create a new tuple with the old tuple inside:
 ```
 tuple1 = (value1, value2, value3)
 newTuple = (tuple1, value4)
 ```
 
-Dictionaries: Key-value store, defined with {} can be modified and added to. colons are only used inside the dictionary as bindings, not used in python for value assignment. Dictionaries cannot have duplicates, and the order is maintainedpost-python 3.7. tuples can be converted to dictionaries with the dict() function.
+**Dictionaries:** Key-value store, defined with {} can be modified and added to. colons are only used inside the dictionary as bindings, not used in python for value assignment. Dictionaries cannot have duplicates, and the order is maintainedpost-python 3.7. tuples can be converted to dictionaries with the dict() function.
 ```
 dictionary1 = {key1:value1, key2:value2, key3:vlaue3}
 dictionary1[key4] = value4
