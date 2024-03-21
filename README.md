@@ -1134,7 +1134,7 @@ students = [
 
 for student in students:
 	print(average(student["grades"]))
-"""
+```
 
 
 
