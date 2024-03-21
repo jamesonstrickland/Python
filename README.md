@@ -1,4 +1,4 @@
-![image](https://github.com/jamesonstrickland/Python/assets/19335953/5ed7c005-cf3a-4a58-b89b-c92d1d2f2f3b)![image](https://github.com/jamesonstrickland/Python/assets/19335953/712d2181-db64-47c4-8b47-c6d94f997273)#  Python How-To
+#  Python How-To
 Building with Python
 
 I will dump my current Python how-to notes here and update them when I can. 
@@ -1092,7 +1092,9 @@ add(2)
 ```
 
 Result:
+
 5
+
 5
 
 Notice that the first value of default_y is defined before the function, and therefore the function will execute before ever seeing the new value of default_y. It is also important to be careful when using lists or dictionaries as default parameters, due to their mutability. 
