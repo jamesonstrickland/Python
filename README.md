@@ -1,4 +1,4 @@
-#  Python How-To
+![image](https://github.com/jamesonstrickland/Python/assets/19335953/5ed7c005-cf3a-4a58-b89b-c92d1d2f2f3b)![image](https://github.com/jamesonstrickland/Python/assets/19335953/712d2181-db64-47c4-8b47-c6d94f997273)#  Python How-To
 Building with Python
 
 I will dump my current Python how-to notes here and update them when I can. 
@@ -998,8 +998,143 @@ for car in cars:
 calculate_mpg(car)
 ```
 
+### Default Parameter Values
+
+Parameter values can be set within functions as default values, which you may overwrite later, but will hold true until overwritten in later code. 
+
+Example with no defaults:
+```
+def add(x, y):
+	total = x + y
+	return total 
+
+print(add(5, 10))
+```
+Result:
+15
+
+Example with default parameters set:
+```
+def add(x, y = 3):
+	total = x + y
+	return total 
+
+print(add(5))
+```
+Result:
+8
+
+Notice that in the second example, the y was already set to a default value of 3, and thus the print statement assigned the value of 5 to the x variable and took the default value of 3 for the y variable. Had we assigned a different value to y by adding it in the print parameter, the 3 value would be overwritten. 
+
+**Named Arguments**
+You can use Named Arguments by being more descriptive with the parameters when calling a function. 
+
+Example:
+```
+def add(x, y):
+	total = x + y
+	return total 
+
+print(add(x=5, y=10))
+```
+Result:
+15
+
+This can be done with any function, not just functions with default parameters. If you choose to use a named argument for the first parameter and there are no default parameters set, you must name both, otherwise you will encounter an error. You can, however, use no name for the first and name the second and it will not encounter an error. 
+
+Error Example:
+
+```
+def add(x, y):
+	total = x + y
+	return total 
+
+print(add(x=5, 10))
+```
+Result:
+File "main.py", line 5
+	print(add(x=5, 10))
+			    ^
+	
+SyntaxError: positional argument follows keyword argument
 
 
+It is highly discouraged to use other predefined variables as default parameter values, because should the variable be chagned later in your code, the function will still assign the previously defined variable value.
+
+Example:
+```
+default_y = 3
+
+def add(x, y=default_y):
+	total = x + y
+	print(total)
+	
+add(2)
+```
+
+Result:
+5
+
+If we then modify the default_y value at a later point in the code, the result will still be 5.
+
+Example:
+```
+default_y = 3
+
+def add(x, y=default_y):
+	total = x + y
+	print(total)
+	
+add(2)
+
+default_y = 4 
+add(2)
+```
+
+Result:
+5
+5
+
+Notice that the first value of default_y is defined before the function, and therefore the function will execute before ever seeing the new value of default_y. It is also important to be careful when using lists or dictionaries as default parameters, due to their mutability. 
+
+
+### Lambda Functions
+
+Lambda functions are used to get inputs, do small amount of processing and return outputs. They can perform an action or return an output. They can be used to simplify code. 
+
+Syntax:
+			 return value
+			     v     v
+divide = lambda x, y: x / y
+                             ^   ^ 
+		Parameters
+		
+If the lambda does not have a variable assigned, it is typically useless, since python has no way to call it. 
+
+
+
+
+Example:
+```
+"""
+This was the original function, that we will transform into a lambda function below. Note that it is not common to use lambda functions in this way, as it is assigned to a variable, and we might as well leave the original in this use case. But the syntax is correct and it will execute properly. 
+def average(sequence):
+	return sum(sequence) / len(sequence)
+"""
+
+average = lambda sequence: sum(sequence / len(Sequence)
+	
+	
+students = [
+	{"name": "John", "grades": (67,80,97,100)},
+	{"name": "Roger", "grades": (67,85,65,78)},
+	{"name": "Tyler", "grades": (67,87,97,99)},
+	{"name": "Greg", "grades": (67,45,97,100)}
+]
+
+for student in students:
+	print(average(student["grades"]))
+"""
 
 
 
