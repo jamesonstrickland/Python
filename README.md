@@ -1139,6 +1139,109 @@ for student in students:
 ```
 
 
+## Example
+
+User story - 
+	- I want to add new movies to my collection so that I can track them
+	- I want to list my movies to see what I already have
+	- Find a movie by title
+
+Implementation Tasks
+	- Decide where to store movies in code
+		○ list 
+			§ append to add
+			§ movies = []
+	- What data we want to store for each movie
+		○ dictionary
+			§ title, director, release year
+				□ title = input("Enter movie title:")
+				□ director = input("Enter movie director:")
+				□ year = input("Enter release year:")
+				□ movies.append({
+					® 'title': title,
+					® 'director' : director,
+					® 'year': year
+					® })
+	- Show the user a menu and let them pick an option
+		○ Get input
+		○ run a loop to get input again at the end
+			§ menu_prompt = "\nEnter 'a' to add a movie, 'l' to see a list of your movies, 'f' to find a movie by title, or 'q' to quit:"
+			§ selection = input(menu_prompt)
+			§ while selection != 'q':
+				□ if selection == 'a':
+					® pass
+				□ elif selection == 'l': 
+					® pass
+				□ elif selection == 'f': 
+					® pass
+				□ else:
+					® print("Unknown command. Please try again.")
+				□ selection = input(menu_prompt)
+	- Implement each requirement in turn, as a separate function
+	- Stop the program when user types 'q' in the menu
+
+```
+menu_prompt = "\nEnter 'a' to add a request, 'l' to see your requests, 'f' to find a request by ID, or 'q' to quit: "
+
+materials = []
+
+def add():
+  materialID = input("Enter a materialID:")
+  department = input("Enter your department:")
+  request_date = input("Enter the date of your request:")
+
+  materials.append({
+    'ID': materialID,
+    'dept': department,
+    'request date': request_date
+})
+
+def list():
+  for material in materials:
+    print(material)
+
+def find():
+  material_search = input("Enter a materialID: ")
+  for material in materials:
+      if materialID == material_search:
+        print_materials(material)
+  """
+  This works, but is confusing, so it has been optimized for readability above. 
+  list_match = [material for material in materials if material['ID'] == menu]
+  for material in list_match:
+    print(material)
+"""
+
+user_options = {
+    "a": add,
+    "l": list,
+    "f": find
+}
+
+def selection():
+  selection = input(menu_prompt)
+  while selection != 'q':
+    if selection in user_options:
+      selected_function = user_options[selection]
+      selected_function()
+    else:
+      print('Unknown command. Please try again.')
+    selection = input(menu_prompt)
+
+selection()
+```
+
+# Object Oriented Programming (OOP)
+
+Object Oriented Programming is a programming paradigm that allows for structuring programs so that properties and behaviors are bundled into individual objects. 
+
+This is achieved in Python with using classes. An object is defined by a Class, which can contain both data that defines the object and actions that can be performed on the object itself. OOP in a larger context is defined as a way of programming that uses objects as building blocks toward a larger, more interactive and powerful application.
+
+Objects can be thought of as a structure that holds data, and also specific actions to perform with that encapsulated data. 
+
+## Classes
+
+## Methods
 
 
 
